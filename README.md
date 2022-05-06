@@ -1,7 +1,3 @@
-# node-express-quickstart
- Quickstart for Nullstone
-
-
 # Node Express Quickstart
 
 This is a Node Express Quickstart for [Nullstone](https://nullstone.io).
@@ -27,7 +23,6 @@ This uses the Nullstone official [nullstone/node](https://hub.docker.com/reposit
 You can run this project locally inside Docker or using node alone.
 To use docker, this project contains `docker-compose.yml` that runs with `NODE_ENV=development`.
 This setup ensures that using Docker doesn't inhibit typical development workflows:
-- Hot reload is configured so that changes to the app doesn't require a reboot
 - Dependencies are installed on boot of docker container
 
 ```shell
@@ -36,14 +31,9 @@ docker compose up
 
 Visit [http://localhost:9000](http://localhost:9000).
 
-### Hot reload
-
-The `app` in `docker-compose.yml` is configured to run express in debug mode.
-You do not need to rebuild/restart the flask app when making changes to code.
-
 ### Update dependencies
 
-Any time you change `requirements.txt`, you need to update your dependencies.
+Any time you change `package.json`, you need to update your dependencies.
 The dependencies will be installed on boot of the docker container; restart the container to update.
 
 ```shell
@@ -56,4 +46,3 @@ This app was generated following these steps.
 1. `yarn init`
 2. `yarn add express`
 3. Copy `app.js` from Hello World example.
-4. 
