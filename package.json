@@ -1,0 +1,12 @@
+{
+  "name": "node-express-quickstart",
+  "version": "1.0.0",
+  "description": "Node Express Quickstart for Nullstone",
+  "main": "index.js",
+  "repository": "git@github.com:nullstone-io/node-express-quickstart.git",
+  "author": "Brad Sickles <brad.sickles@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
