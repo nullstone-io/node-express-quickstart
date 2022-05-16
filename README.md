@@ -12,7 +12,7 @@ This uses the Nullstone official [nullstone/node](https://hub.docker.com/reposit
   ```shell
   nullstone up --wait --block=<app-name> --env=<env-name>
   ```
-3Build, push, and deploy
+3. Build, push, and deploy
   ```shell
   docker build -t express .
   nullstone launch --source=express --app=<app-name> --env=<env-name>
