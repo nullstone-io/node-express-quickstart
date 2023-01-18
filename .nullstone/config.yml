@@ -1,0 +1,23 @@
+version: "0.1"
+
+apps:
+  webapp:
+    capabilities:
+      - module: aws-s3-access
+        connections:
+          bucket: images
+      - module: aws-postgres-access
+        connections:
+          postgres: postgres
+      - module: aws-load-balancer
+        connections:
+          subdomain: webapp-nullstone-dev-sub
+        vars:
+          enable_https: true
+          health_check_enabled: true
+          health_check_healthy_threshold: 2
+          health_check_unhealthy_threshold: 2
+          health_check_interval: 5
+          health_check_matcher: "200-499"
+          health_check_path: "/"
+          health_check_timeout: 4
