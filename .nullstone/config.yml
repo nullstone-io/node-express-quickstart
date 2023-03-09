@@ -6,7 +6,7 @@ apps:
       - module: aws-s3-access
         connections:
           bucket: images
-      - module: aws-postgres-acces
+      - module: aws-postgres-access
         connections:
           postgres: postgres
       - module: aws-load-balancer
