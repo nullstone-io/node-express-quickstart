@@ -1,7 +1,29 @@
 version: "0.1"
 
+subdomains:
+  webapp-subdomain:
+    dns_name: webapp
+    connections:
+      domain: nullstone-dev
+
+datastores:
+  postgres:
+    module: aws-rds-postgres
+    vars:
+      postgres_version: "13"
+      instance_class: "db.t3.micro"
+      high_availability: true
+      allocated_storage: 10
+      backup_retention_period: 5
+  images:
+    module: aws-s3-bucket
+
 apps:
   webapp:
+    vars:
+      service_cpu: 256
+      service_memory: 512
+      service_port: 80
     capabilities:
       - module: aws-s3-access
         connections:
@@ -11,7 +33,7 @@ apps:
           postgres: postgres
       - module: aws-load-balancer
         connections:
-          subdomain: webapp-nullstone-dev-sub
+          subdomain: webapp-subdomain
         vars:
           enable_https: true
           health_check_enabled: true
